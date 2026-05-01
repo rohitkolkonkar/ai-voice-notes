@@ -4,8 +4,8 @@ exports.handler = async function (event, context) {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
-  // Use environment variable if available in Netlify, otherwise use the provided key
-  const GROQ_API_KEY = process.env.GROQ_API_KEY;
+  // Use the main Groq API key from Netlify environment variables
+  const GROQ_API_KEY = process.env.GROQ_API_KEY_voice;
 
   try {
     const { transcript } = JSON.parse(event.body);
