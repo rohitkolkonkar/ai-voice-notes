@@ -1000,20 +1000,15 @@
     </div>
   </div>
 
+  <!-- Firebase config loaded from external file (gitignored) -->
+  <script src="firebase-config.js"></script>
+
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
     import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
-    // TODO: Replace with your actual Firebase config
-    const firebaseConfig = {
-      apiKey: "AIzaSyC9r-24B_VZafthCvfUXFv1D50egHf-t2g",
-      authDomain: "aivoice-ceeae.firebaseapp.com",
-      projectId: "aivoice-ceeae",
-      storageBucket: "aivoice-ceeae.firebasestorage.app",
-      messagingSenderId: "163574072625",
-      appId: "1:163574072625:web:570959f8bad44725cb9c10",
-      measurementId: "G-S6Q738HKG7"
-    };
+    // Firebase config is loaded from firebase-config.js (gitignored)
+    const firebaseConfig = window.FIREBASE_CONFIG;
 
     let auth;
     try {
